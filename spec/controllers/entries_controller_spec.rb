@@ -44,40 +44,60 @@ describe EntriesController do
   end
 
   describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Entry" do
-        expect {
-          post :create, {:entry => valid_attributes}, valid_session
-        }.to change(Entry, :count).by(1)
+    describe "with a valid entry" do
+      context "when a definition for the entry exists in the database" do
+        it "returns the definition" do
+
+        end
       end
 
-      it "assigns a newly created entry as @entry" do
-        post :create, {:entry => valid_attributes}, valid_session
-        assigns(:entry).should be_a(Entry)
-        assigns(:entry).should be_persisted
-      end
+      context "when NO definition for the entry exists in the database" do
+        xit "calls the dictionary api" do
 
-      it "redirects to the created entry" do
-        post :create, {:entry => valid_attributes}, valid_session
-        response.should redirect_to(Entry.last)
+        end
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved entry as @entry" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "word" => "invalid value" }}, valid_session
-        assigns(:entry).should be_a_new(Entry)
-      end
+    describe "with an invalid entry" do
+      xit "handles the situation" do
 
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Entry.any_instance.stub(:save).and_return(false)
-        post :create, {:entry => { "word" => "invalid value" }}, valid_session
-        response.should render_template("new")
       end
     end
+
+    #describe "with valid params" do
+    #  it "creates a new Entry" do
+    #    expect {
+    #      post :create, {:entry => valid_attributes}, valid_session
+    #    }.to change(Entry, :count).by(1)
+    #  end
+    #
+    #  it "assigns a newly created entry as @entry" do
+    #    post :create, {:entry => valid_attributes}, valid_session
+    #    assigns(:entry).should be_a(Entry)
+    #    assigns(:entry).should be_persisted
+    #  end
+    #
+    #  it "redirects to the created entry" do
+    #    post :create, {:entry => valid_attributes}, valid_session
+    #    response.should redirect_to(Entry.last)
+    #  end
+    #end
+    #
+    #describe "with invalid params" do
+    #  it "assigns a newly created but unsaved entry as @entry" do
+    #    # Trigger the behavior that occurs when invalid params are submitted
+    #    Entry.any_instance.stub(:save).and_return(false)
+    #    post :create, {:entry => { "word" => "invalid value" }}, valid_session
+    #    assigns(:entry).should be_a_new(Entry)
+    #  end
+    #
+    #  it "re-renders the 'new' template" do
+    #    # Trigger the behavior that occurs when invalid params are submitted
+    #    Entry.any_instance.stub(:save).and_return(false)
+    #    post :create, {:entry => { "word" => "invalid value" }}, valid_session
+    #    response.should render_template("new")
+    #  end
+    #end
   end
 
   describe "PUT update" do

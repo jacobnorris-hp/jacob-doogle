@@ -9,6 +9,7 @@ gem 'rails'
 gem 'faraday'
 gem 'factory_girl_rails'
 gem 'webmock'
+gem 'backbone-on-rails'
 
 group :production do
   gem 'rails_12factor'

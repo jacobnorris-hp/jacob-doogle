@@ -6,7 +6,7 @@ describe "the main search page" do
     visit '/'
 
     fill_in "entry_word", with: "spelunking"
-    click_button "Doogle search"
+    click_button 'Doogle Search'
 
     # wait_for_ajax - might eventually need
 
